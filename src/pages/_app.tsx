@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Header/>  
           </GridItem>
           <GridItem colSpan={1} rowSpan={1}>
-            <Container maxW='container.xl' display='flex'>
+            <Container maxW='container.xl' display='flex' height='100%'>
               <Aside/>
               <Component {...pageProps} />
             </Container>
