@@ -14,8 +14,11 @@ export function InputComponent({label, name, ...atributesRestantes}: inputProps)
             variant='filled'
             bg='gray.700'
             w='100%' 
+            h='12'
             type={name}
             focusBorderColor='pink.500'
+            borderRadius='40'
+
             _hover={{
             bg: 'gray.700',
             }}
