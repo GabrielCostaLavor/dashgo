@@ -72,7 +72,7 @@ export default function Dashboard(){
     <>
     <Grid h='100vh' templateRows='auto 1fr auto' templateColumns='auto'>
         <GridItem colSpan={1} rowSpan={1}>
-        <Header/>  
+            <Header/>  
         </GridItem>
         <GridItem colSpan={1} rowSpan={1}>
             <Container maxW='container.xl' display='flex' height='100%'>

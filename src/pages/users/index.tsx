@@ -1,4 +1,4 @@
-import { Box, Flex, Table, Text, Button, Icon, Tr, Th, Input, Td, Grid, GridItem, Container } from '@chakra-ui/react'
+import { Box, Flex, Table, Text, Button, Icon, Grid, GridItem, Container } from '@chakra-ui/react'
 import { BsPersonPlusFill } from 'react-icons/bs'
 import { RiPencilLine } from 'react-icons/ri'
 import { Aside } from '../../components/Aside'

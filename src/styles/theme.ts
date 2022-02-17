@@ -15,7 +15,6 @@ export const theme = extendTheme({
             "50": "#EEEEF2",
         }
     },
-
     fontSizes:{
         lg: ''
     },
