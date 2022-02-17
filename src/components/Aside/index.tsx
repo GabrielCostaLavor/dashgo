@@ -8,15 +8,15 @@ export function Aside(){
     return(
         <Box as="aside" w='180px' height='100%'>
             <AsideSection title="GERAL">
-                <AsideLink icon={RiDatabaseLine} LinkName="Dashboard">
+                <AsideLink linkUrl="/dashboard" icon={RiDatabaseLine} LinkName="Dashboard">
                 </AsideLink>
-                <AsideLink icon={RiContactsLine} LinkName="Usuários">
+                <AsideLink linkUrl="/users" icon={RiContactsLine} LinkName="Usuários">
                 </AsideLink>
             </AsideSection>
             <AsideSection title="AUTOMAÇÃO">
-                <AsideLink icon={AiOutlineForm} LinkName="Formulário">
+                <AsideLink linkUrl='/#' icon={AiOutlineForm} LinkName="Formulário">
                 </AsideLink>
-                <AsideLink icon={RiGitBranchLine} LinkName="Automação">
+                <AsideLink linkUrl='/#' icon={RiGitBranchLine} LinkName="Automação">
                 </AsideLink>
             </AsideSection>
         </Box>
