@@ -1,24 +1,32 @@
-import { Box, Flex, Icon, Link, Stack, Text } from "@chakra-ui/react";
-import {RiContactsLine, RiDatabaseLine,RiGitBranchLine} from 'react-icons/ri'
-import {AiOutlineForm} from 'react-icons/ai'
-import { AsideSection } from "./AsideSection";
-import { AsideLink } from "./AsideLink";
+import { Box, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, useBreakpointValue} from "@chakra-ui/react";
+import { useSidebarDrawer } from "../context/SidebarDrawerContext";
+import { AsideNav } from "./AsideNav";
 
 export function Aside(){
+    const { isOpen, onClose } = useSidebarDrawer()
+    const AsideWideMobile = useBreakpointValue({
+        base: true,
+        lg: false
+    })
+
+    if(AsideWideMobile){
+        return(
+            //Vai abrir um modal com meu menu mobile
+            <Drawer isOpen={isOpen} placement="left" onClose={onClose} >
+                <DrawerOverlay />
+                <DrawerContent bg="gray.800"> 
+                    <DrawerCloseButton/>
+                    <DrawerHeader>Menu</DrawerHeader>
+                    <DrawerBody>
+                        <AsideNav/>
+                    </DrawerBody>
+                </DrawerContent>
+            </Drawer>
+        )
+    }
     return(
         <Box as="aside" w='180px' height='100%'>
-            <AsideSection title="GERAL">
-                <AsideLink linkUrl="/dashboard" icon={RiDatabaseLine} LinkName="Dashboard">
-                </AsideLink>
-                <AsideLink linkUrl="/users" icon={RiContactsLine} LinkName="Usuários">
-                </AsideLink>
-            </AsideSection>
-            <AsideSection title="AUTOMAÇÃO">
-                <AsideLink linkUrl='/#' icon={AiOutlineForm} LinkName="Formulário">
-                </AsideLink>
-                <AsideLink linkUrl='/#' icon={RiGitBranchLine} LinkName="Automação">
-                </AsideLink>
-            </AsideSection>
+            <AsideNav/>
         </Box>
     )
 }
