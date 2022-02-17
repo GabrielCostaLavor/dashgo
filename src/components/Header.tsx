@@ -1,5 +1,5 @@
 import { Avatar, Box, Container, Flex, HStack, Icon, Text } from "@chakra-ui/react";
-import { InputComponent } from "./Form/input";
+import { InputComponent } from "./Form/Input";
 import {SearchIcon} from '@chakra-ui/icons'
 import { RiNotificationLine, RiUserAddLine} from 'react-icons/ri'
 

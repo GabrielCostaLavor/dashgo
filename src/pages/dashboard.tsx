@@ -1,7 +1,6 @@
 import { Box, Container, Flex, Grid, GridItem, SimpleGrid, Text, theme } from "@chakra-ui/react";
-import { Aside } from "../components/aside";
-import { DashboardMain } from "../components/dashboardMain";
-import { Header } from "../components/header";
+import { Aside } from "../components/Aside";
+import { Header } from "../components/Header";
 import dynamic from "next/dynamic";
 
 import { ApexOptions } from  'apexcharts';

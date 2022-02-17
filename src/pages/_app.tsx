@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app'
 import {ChakraProvider, Container, Grid, GridItem} from '@chakra-ui/react'
 import { theme } from '../styles/theme'
-import { Header } from '../components/header'
-import { Footer } from '../components/footer'
-import { Aside } from '../components/aside'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { Aside } from '../components/Aside'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

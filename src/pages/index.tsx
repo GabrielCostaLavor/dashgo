@@ -2,7 +2,7 @@ import { Flex, Container, Stack, Button } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { InputComponent } from '../components/Form/input'
+import { InputComponent } from '../components/Form/Input'
 
 const SingIn: NextPage = () => {
   return (

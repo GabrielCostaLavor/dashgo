@@ -1,5 +1,6 @@
 import { Box, Flex, Icon, Link, Stack, Text } from "@chakra-ui/react";
-import {RiContactsLine, RiDatabaseLine} from 'react-icons/ri'
+import {RiContactsLine, RiDatabaseLine,RiGitBranchLine} from 'react-icons/ri'
+import {AiOutlineForm} from 'react-icons/ai'
 
 export function Aside(){
     return(
@@ -22,18 +23,18 @@ export function Aside(){
                 </Stack>
             </Box>
             <Box>
-                <Text py='9' fontWeight='bold' color='gray.300' letterSpacing='tight'>GERAL</Text>
+                <Text py='9' fontWeight='bold' color='gray.300' letterSpacing='tight'>AUTOMAÇÃO</Text>
                 <Stack spacing='4'>
                     <Link>
                         <Flex align='center'>
-                            <Icon as={RiDatabaseLine } fontSize='20px'></Icon>
-                            <Text fontWeight={600} fontSize='1xl'  ml='3' letterSpacing='tight'>Dashboard</Text>
+                            <Icon as={AiOutlineForm } fontSize='20px'></Icon>
+                            <Text fontWeight={600} fontSize='1xl'  ml='3' letterSpacing='tight'>Formulário</Text>
                         </Flex>
                     </Link>
                     <Link>
                         <Flex align='center'>
-                            <Icon as={RiContactsLine } fontSize='20px'></Icon>
-                            <Text fontWeight={600} fontSize='1xl'  ml='3' letterSpacing='tight'>Usuários</Text>
+                            <Icon as={RiGitBranchLine } fontSize='20px'></Icon>
+                            <Text fontWeight={600} fontSize='1xl'  ml='3' letterSpacing='tight'>Automação</Text>
                         </Flex>
                     </Link>
                 </Stack>
