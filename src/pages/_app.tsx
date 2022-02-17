@@ -10,20 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       {/**ChakraProvider serve para habilitar o chakra, esse theme é pra por o a variavel com estilização pro thema, resetCSS é pra resetar o css */}
       <ChakraProvider theme={theme}>
-        <Grid h='100vh' templateRows='auto 1fr auto' templateColumns='auto'>
-          <GridItem colSpan={1} rowSpan={1}>
-            <Header/>  
-          </GridItem>
-          <GridItem colSpan={1} rowSpan={1}>
-            <Container maxW='container.xl' display='flex' height='100%'>
-              <Aside/>
-              <Component {...pageProps} />
-            </Container>
-          </GridItem>
-          <GridItem colSpan={1} rowSpan={1}>
-            <Footer/>
-          </GridItem>
-        </Grid>
+        <Component {...pageProps} />
       </ChakraProvider>
     </>
     )

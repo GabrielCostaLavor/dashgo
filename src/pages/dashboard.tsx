@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import dynamic from "next/dynamic";
 
 import { ApexOptions } from  'apexcharts';
+import { Footer } from "../components/Footer";
 
 
 const Chart = dynamic(() => import('react-apexcharts'), {
@@ -69,7 +70,14 @@ const series = [
 export default function Dashboard(){
     return(
     <>
-    <Box as="main" w='100%' my={10}>
+    <Grid h='100vh' templateRows='auto 1fr auto' templateColumns='auto'>
+        <GridItem colSpan={1} rowSpan={1}>
+        <Header/>  
+        </GridItem>
+        <GridItem colSpan={1} rowSpan={1}>
+            <Container maxW='container.xl' display='flex' height='100%'>
+                <Aside/>
+            <Box as="main" w='100%' my={10}>
             <SimpleGrid flex='1' gap='4' minChildWidth='320px' alignContent='flex-start'>
                 <Box
                     p='8'
@@ -77,11 +85,11 @@ export default function Dashboard(){
                     borderRadius={8}
                 >
                     <Text
-                      fontSize='lg'
-                      mb='4'>Inscritos
-                      da
-                      semana</Text>
-                      <Chart options={options} series={series} type="area" height={160} />
+                        fontSize='lg'
+                        mb='4'>Inscritos
+                        da
+                        semana</Text>
+                        <Chart options={options} series={series} type="area" height={160} />
                 </Box>
                 <Box
                     p='8'
@@ -92,7 +100,13 @@ export default function Dashboard(){
                     <Chart options={options} series={series} type="area" height={160} />
                 </Box>
             </SimpleGrid>
-        </Box>
+            </Box>
+            </Container>
+        </GridItem>
+        <GridItem colSpan={1} rowSpan={1}>
+            <Footer/>
+        </GridItem>
+    </Grid>
     </>
     )
 }
