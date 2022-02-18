@@ -1,5 +1,7 @@
-import { Flex, Icon, Link, Text, LinkProps } from "@chakra-ui/react";
+import { Flex, Icon, Link as LinkChakra, Text, LinkProps } from "@chakra-ui/react";
+import Link from "next/link";
 import { ElementType } from "react";
+import { ActiveLink } from "../ActiveLink";
 
 interface AsideLinkProps extends LinkProps{
     icon: ElementType,
@@ -9,11 +11,13 @@ interface AsideLinkProps extends LinkProps{
 
 export function AsideLink({linkUrl, icon, LinkName, ...rest}: AsideLinkProps){
     return(
-        <Link {...rest} href={linkUrl}>
-            <Flex align='center'>
-                <Icon as={icon} fontSize='20px'></Icon>
-                <Text fontWeight={600} fontSize='1xl'  ml='3' letterSpacing='tight'>{LinkName}</Text>
-            </Flex>
-        </Link>
+        <ActiveLink href={linkUrl} passHref>
+            <LinkChakra {...rest} >
+                <Flex align='center'>
+                    <Icon as={icon} fontSize='20px'></Icon>
+                    <Text fontWeight={600} fontSize='1xl'  ml='3' letterSpacing='tight'>{LinkName}</Text>
+                </Flex>
+            </LinkChakra>
+        </ActiveLink>
     )
 }
