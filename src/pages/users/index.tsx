@@ -1,6 +1,6 @@
 import { Box, Flex, Table, Text, Button, Icon, Grid, GridItem, Container } from '@chakra-ui/react'
+import Link from 'next/link'
 import { BsPersonPlusFill } from 'react-icons/bs'
-import { RiPencilLine } from 'react-icons/ri'
 import { Aside } from '../../components/Aside'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
@@ -18,13 +18,15 @@ export default function Users() {
         <Box as='main' w='100%' my='9' height='auto'>
         <Container maxW='container.xl' display='flex' height='100%'>
             <Aside/>
-            <Box bg='gray.800' w='100%' p={8} borderRadius={'lg'}>
+            <Box bg='gray.800' w='100%' p={['4','6','8']} borderRadius={'lg'}>
                 <Flex align='center' justify='space-between' pb='4'>
                     <Text fontSize='xx-large' fontWeight='bold'>Usuários</Text>
-                    <Button type='submit' bg='pink.500'>
-                        <Icon as={BsPersonPlusFill} />
-                        <Text pl='2'>Criar Novo</Text>
-                    </Button>
+                    <Link href='/users/create' passHref>
+                        <Button as='a' bg='pink.500'>
+                            <Icon as={BsPersonPlusFill} />
+                            <Text pl='2'>Criar Novo</Text>
+                        </Button>
+                    </Link>
                 </Flex>
                 <Table>
                     <UserListHead />

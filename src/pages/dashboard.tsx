@@ -80,7 +80,7 @@ export default function Dashboard(){
             <Box as="main" w='100%' my={10}>
             <SimpleGrid flex='1' gap='4' minChildWidth='320px' alignContent='flex-start'>
                 <Box
-                    p='8'
+                    p={['4','6','8']}
                     bg='gray.800'
                     borderRadius={8}
                 >
@@ -92,7 +92,7 @@ export default function Dashboard(){
                         <Chart options={options} series={series} type="area" height={160} />
                 </Box>
                 <Box
-                    p='8'
+                    p={['4','6','8']}
                     bg='gray.800'
                     borderRadius={8}
                 >

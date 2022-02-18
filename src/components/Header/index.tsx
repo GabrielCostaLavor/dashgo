@@ -33,6 +33,8 @@ export function Header(){
                         variant='unstyled'
                         onClick={onOpen}
                         flex={1}
+                        display='flex'
+                        alignContent='center'
                     >
 
                     </IconButton>
