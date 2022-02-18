@@ -1,6 +1,10 @@
-import { Input, Th, Tr, Text } from "@chakra-ui/react";
+import { Input, Th, Tr, Text, useBreakpointValue } from "@chakra-ui/react";
 
 export function UserListHead(){
+    const isWideVersion = useBreakpointValue({
+        base: true,
+        lg: false
+    })
     return(
     <Tr
     borderBottom='1px
@@ -21,11 +25,13 @@ export function UserListHead(){
         borderBottom='none'>
             <Text fontSize='sm'>USUÁRIO</Text>
         </Th>
-        <Th
-        borderBottom='none'
-        textAlign='center'>
-            <Text fontSize='sm'>DATA DE CADASTRO</Text>
-        </Th>
+        {   !isWideVersion &&
+            (<Th
+                borderBottom='none'
+                textAlign='center'>
+                <Text fontSize='sm'>DATA DE CADASTRO</Text>
+            </Th>)
+        }
         <Th
         borderBottom='none'>
         </Th>
