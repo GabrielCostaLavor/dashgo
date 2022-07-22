@@ -7,7 +7,7 @@ interface viewWideLgProps{
 }
 
 export function User({showProfileUser = true} : viewWideLgProps){
-    console.log('Teste '+showProfileUser)
+   // console.log('Teste '+showProfileUser)
     const color = useBreakpointValue({
         base: 'red.900',
         md: 'green.500',

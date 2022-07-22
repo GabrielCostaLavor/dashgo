@@ -14,7 +14,7 @@ export function Header(){
         lg: true
     })
     
-    console.log(viewWideLg)
+    //console.log(viewWideLg)
     return(
         <Flex 
         as='header'

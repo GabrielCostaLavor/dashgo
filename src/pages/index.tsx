@@ -1,10 +1,22 @@
-import { Flex, Container, Stack, Button } from '@chakra-ui/react'
+import { Flex, Stack, Button } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { InputComponent } from '../components/Form/Input'
 
+type Values ={
+  email: string,
+  password: string
+}
 const SingIn: NextPage = () => {
+
+  const {register, handleSubmit, formState, errors} = useForm()
+  console.log(errors)
+  const handleSignIn: SubmitHandler<Values> = async (values) => {
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    
+    console.log(values)
+  }
+
   return (
     <>
       <Flex
@@ -14,7 +26,7 @@ const SingIn: NextPage = () => {
         align='center'
         justify='center'
         margin='auto'>
-        <Flex 
+        <Flex
           as='form' 
           w='100%'
           flexDirection='column'
@@ -22,17 +34,29 @@ const SingIn: NextPage = () => {
           h='auto'
           bg='gray.800'
           borderRadius='16'
+          onSubmit={handleSubmit(handleSignIn)}
           >
           {/**/}
-          <Stack spacing={4}>
-            <InputComponent name='email' label='Email' />
-            <InputComponent name='password' label='Senha' />
+          <Stack spacing={4}>(
+            <InputComponent
+              name='email'
+              label='Email'
+              ref={register({required: "Email obrigatório"})}
+              error={errors.email}
+            />
+            <InputComponent
+              name='password'
+              label='Senha'
+              error={errors.password}
+              ref={register({required: 'Senha obrigatória'})}
+            />
           </Stack>
               <Button
                 type='submit'
                 bg='pink.500'
                 color='green.50'
                 mt='6'
+                isLoading={formState.isSubmitting}
                 _hover={{
                   bg: '#1F2029',
                   border: '1px solid #ffffff',
